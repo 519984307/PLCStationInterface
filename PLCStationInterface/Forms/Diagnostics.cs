@@ -1,4 +1,6 @@
 ﻿using PLCStationInterface.Classes;
+using PLCStationInterface.Classes.PLC;
+using PLCStationInterface.UDT;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +15,35 @@ namespace PLCStationInterface.Forms
 {
     public partial class Diagnostics : Form
     {
-        public Diagnostics()
+        private PLC PLC;
+
+        public Diagnostics(PLC plc)
         {
             InitializeComponent();
 
+            PLC = plc;  
+
             Translator.LanguageChanged += Translate;
+
+            PLCStatusDot.Client = PLC;
+            PLC.LiveUIntStatusCodeChanged += LiveUIntStatusCode_Changed;
+            PLC.ReadStatusCodeChanged += ReadStatusCode_Changed;
+            PLC.WriteStatusCodeChanged += WriteStatusCode_Changed;
+        }
+
+        private void WriteStatusCode_Changed(object sender, int e)
+        {
+            lblWriteStatusCodeData.Text = e.ToString();
+        }
+
+        private void ReadStatusCode_Changed(object sender, int e)
+        {
+            lblReadStatusCodeData.Text = e.ToString();  
+        }
+
+        private void LiveUIntStatusCode_Changed(object sender, int e)
+        {
+            lblLiveUIntStatusCodeData.Text = e.ToString();
         }
 
         private void Translate(object sender, Language e)
@@ -33,5 +59,7 @@ namespace PLCStationInterface.Forms
                 lblPLCStatus.Text = "PLC Status:";
             }
         }
+
+
     }
 }

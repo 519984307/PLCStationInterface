@@ -2,40 +2,68 @@
 using System;
 using System.Threading.Tasks;
 using VisualInspection.Utils.Net;
-using VisualInspection.Utils.PLC;
 
 namespace PLCStationInterface.Classes.PLC
 {
-    public class PLC
+    public class PLC : IHasClientStatus
     {
         public event EventHandler<ushort> LiveUIntChanged;
         public event EventHandler<ClientStatus> StatusChanged;
-        public event EventHandler<int> StatusCodeChanged;
+
+        public event EventHandler<int> ReadStatusCodeChanged;
+        public event EventHandler<int> WriteStatusCodeChanged;
+        public event EventHandler<int> LiveUIntStatusCodeChanged;
+
         public event EventHandler<byte[]> DataBufferReceived;
 
         private S7Client client = new S7Client();
-        //private S7Client WriteClient = new S7Client();
+
         private System.Timers.Timer timerUpdating = new System.Timers.Timer();
         private System.Timers.Timer timerReconnecting = new System.Timers.Timer();
 
-        private int ReadStatusCode = -1;
+        private int readStatusCode = -1;
+        private int writeStatusCode = -1;
+        private int liveUIntStatusCode = -1;
 
         private ushort liveUInt = 0;
         private bool reconnectEnabled = false;
-        //private byte[] readDataBuffer = null;
+        private byte[] readDataBuffer = null;
         private byte[] writeDataBuffer = null;
         private ClientStatus status = ClientStatus.Disconnected;
 
-        public int StatusCode
+        public int ReadStatusCode
         {
-            get => ReadStatusCode;
+            get => readStatusCode;
             private set
             {
-                bool changed = ReadStatusCode != value;
-                ReadStatusCode = value;
-                if (changed) StatusCodeChanged?.Invoke(this, value);
+                bool changed = readStatusCode != value;
+                readStatusCode = value;
+                if (changed) ReadStatusCodeChanged?.Invoke(this, value);
             }
         }
+
+        public int WriteStatusCode
+        {
+            get => writeStatusCode;
+            private set
+            {
+                bool changed = writeStatusCode != value;
+                writeStatusCode = value;
+                if (changed) WriteStatusCodeChanged?.Invoke(this, value);
+            }
+        }
+
+        public int LiveUIntStatusCode
+        {
+            get => liveUIntStatusCode;
+            private set
+            {
+                bool changed = liveUIntStatusCode != value;
+                liveUIntStatusCode = value;
+                if (changed) LiveUIntStatusCodeChanged?.Invoke(this, value);
+            }
+        }
+
 
         public ushort LiveUInt
         {
@@ -66,19 +94,24 @@ namespace PLCStationInterface.Classes.PLC
         public int UpdateInterval { get => (int)timerUpdating.Interval; set => timerUpdating.Interval = value; }
         public int ReconnectInterval { get => (int)timerReconnecting.Interval; set => timerReconnecting.Interval = value; }
         public bool ReconnectEnabled { get => reconnectEnabled; set { reconnectEnabled = value; UpdateReconnectingTimer(); } }
-        //public byte[] ReadDataBuffer { get => readDataBuffer; private set { readDataBuffer = value; DataBufferReceived?.Invoke(this, value); } }
+        public byte[] ReadDataBuffer { get => readDataBuffer; private set { readDataBuffer = value; DataBufferReceived?.Invoke(this, value); } }
         public byte[] WriteDataBuffer { get { return writeDataBuffer; } set { writeDataBuffer = value; } }
 
         public string IPAddress { get; set; } = "192.168.1.25";
         public int Rack { get; set; } = 0;
         public int Slot { get; set; } = 1;
+
         public int ReadDBNumber { get; set; } = 1;
         public int ReadDataBufferOffset { get; set; } = 0;
         public int ReadDataBufferSize { get; set; } = 1;
+
         public int WriteDBNumber { get; set; } = 1;
         public int WriteDataBufferOffset { get; set; } = 0;
         public int WriteDataBufferSize { get; set; } = 1;
+
+        public int LiveUIntDBNumber { get; set; } = 0;
         public int LiveUIntOffset { get; set; } = 0;
+        public int LiveUIntBufferSize { get; set; } = 1;
 
         public PLC()
         {
@@ -93,8 +126,8 @@ namespace PLCStationInterface.Classes.PLC
         public void Connect()
         {
             Status = ClientStatus.Connecting;
-            StatusCode = client.ConnectTo(IPAddress, Rack, Slot);
-            Status = StatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
+            ReadStatusCode = client.ConnectTo(IPAddress, Rack, Slot);
+            Status = ReadStatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
         }
 
         public async Task ConnectAsync() => await Task.Run(Connect);
@@ -114,20 +147,30 @@ namespace PLCStationInterface.Classes.PLC
 
         private void UpdateData(object sender, EventArgs e)
         {
+            ReadLiveUIntFromPLC();
             ReadDataFromPLC();
             WriteDataToPLC();
         }
 
         private void ReadDataFromPLC()
         {
+            if (Status != ClientStatus.Connected) return;
+
             byte[] buffer = new byte[ReadDataBufferSize];
 
-            StatusCode = client.DBRead(ReadDBNumber, ReadDataBufferOffset, ReadDataBufferSize, buffer);
-            Status = StatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
+            ReadStatusCode = client.DBRead(ReadDBNumber, ReadDataBufferOffset, ReadDataBufferSize, buffer);
+            ReadDataBuffer = buffer;
+        }
+
+        private void ReadLiveUIntFromPLC()
+        {
+            byte[] buffer = new byte[LiveUIntBufferSize];
+
+            ReadStatusCode = client.DBRead(LiveUIntDBNumber, LiveUIntOffset, LiveUIntBufferSize, buffer);
+            Status = ReadStatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
             if (Status == ClientStatus.Disconnected) return;
 
-            LiveUInt = S7.GetUIntAt(buffer, LiveUIntOffset);
-            //ReadDataBuffer = buffer;
+            LiveUInt = S7.GetUIntAt(buffer, 0);
         }
 
         private void WriteDataToPLC()

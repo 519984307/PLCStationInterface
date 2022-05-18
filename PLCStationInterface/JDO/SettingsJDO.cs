@@ -9,11 +9,8 @@ namespace PLCStationInterface.UDT
 {
     public class SettingsJDO
     {
-        public DatabaseSettingsJDO DatabaseSettings { get; set; } = new DatabaseSettingsJDO();
-        public BarcodeReaderSettingsJDO BarcodeReaderSettings { get; set; } = new BarcodeReaderSettingsJDO();
-        public MainAppConnectionSettingsJDO MainAppConnectionSettings { get; set; } = new MainAppConnectionSettingsJDO();
-        public PLCStationInterfaceSettingsJDO PLCStationInterfaceSettings { get; set; } = new PLCStationInterfaceSettingsJDO();
-        public StationSettingsJDO StationSettings { get; set; } = new StationSettingsJDO();
+        public PLCSettingsJDO PLCSettings { get; set; } = new PLCSettingsJDO();
+        public TCPServerSettingsJDO TCPServerSettings { get; set; } = new TCPServerSettingsJDO();
         public SettingsLoginJDO SettingsLogin { get; set; } = new SettingsLoginJDO();
 
         public string Serialize()

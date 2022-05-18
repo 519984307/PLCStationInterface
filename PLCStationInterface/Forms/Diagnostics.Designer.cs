@@ -31,8 +31,18 @@ namespace PLCStationInterface.Forms
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPLCStatusCodeData = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblWriteStatusCodeData = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblReadStatusCodeData = new System.Windows.Forms.Label();
+            this.lblPLCLiveUInt = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.lblPLCStatusCode = new System.Windows.Forms.Label();
+            this.lblLiveUIntStatusCodeData = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.PLCStatusDot = new PLCStationInterface.UserControls.ClientStatusDot();
             this.lblPLCStatus = new System.Windows.Forms.Label();
@@ -51,26 +61,40 @@ namespace PLCStationInterface.Forms
             this.clientStatusDot1 = new PLCStationInterface.UserControls.ClientStatusDot();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblPLCLiveUInt = new System.Windows.Forms.Label();
-            this.lblPLCStatusCodeData = new System.Windows.Forms.Label();
-            this.lblPLCLiveUIntData = new System.Windows.Forms.Label();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.tableLayoutPanel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 342F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 2);
@@ -78,19 +102,154 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 210);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 308);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tableLayoutPanel15);
+            this.panel1.Controls.Add(this.tableLayoutPanel13);
             this.panel1.Controls.Add(this.tableLayoutPanel5);
             this.panel1.Controls.Add(this.tableLayoutPanel9);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
-            this.panel1.Location = new System.Drawing.Point(75, 23);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(50, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 184);
+            this.panel1.Size = new System.Drawing.Size(336, 282);
             this.panel1.TabIndex = 6;
+            // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel15.Controls.Add(this.lblPLCStatusCodeData, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 210);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(336, 42);
+            this.tableLayoutPanel15.TabIndex = 9;
+            // 
+            // lblPLCStatusCodeData
+            // 
+            this.lblPLCStatusCodeData.AutoSize = true;
+            this.lblPLCStatusCodeData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPLCStatusCodeData.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPLCStatusCodeData.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPLCStatusCodeData.Location = new System.Drawing.Point(254, 0);
+            this.lblPLCStatusCodeData.Name = "lblPLCStatusCodeData";
+            this.lblPLCStatusCodeData.Size = new System.Drawing.Size(79, 42);
+            this.lblPLCStatusCodeData.TabIndex = 3;
+            this.lblPLCStatusCodeData.Text = "XXXX";
+            this.lblPLCStatusCodeData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.SystemColors.Control;
+            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(245, 42);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "PLC LiveUInt:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel13.Controls.Add(this.lblWriteStatusCodeData, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 168);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(336, 42);
+            this.tableLayoutPanel13.TabIndex = 8;
+            // 
+            // lblWriteStatusCodeData
+            // 
+            this.lblWriteStatusCodeData.AutoSize = true;
+            this.lblWriteStatusCodeData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWriteStatusCodeData.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblWriteStatusCodeData.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblWriteStatusCodeData.Location = new System.Drawing.Point(254, 0);
+            this.lblWriteStatusCodeData.Name = "lblWriteStatusCodeData";
+            this.lblWriteStatusCodeData.Size = new System.Drawing.Size(79, 42);
+            this.lblWriteStatusCodeData.TabIndex = 3;
+            this.lblWriteStatusCodeData.Text = "XXXX";
+            this.lblWriteStatusCodeData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(3, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(245, 42);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Write Status Code:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel5.Controls.Add(this.lblReadStatusCodeData, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblPLCLiveUInt, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 126);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(336, 42);
+            this.tableLayoutPanel5.TabIndex = 7;
+            // 
+            // lblReadStatusCodeData
+            // 
+            this.lblReadStatusCodeData.AutoSize = true;
+            this.lblReadStatusCodeData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReadStatusCodeData.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReadStatusCodeData.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblReadStatusCodeData.Location = new System.Drawing.Point(254, 0);
+            this.lblReadStatusCodeData.Name = "lblReadStatusCodeData";
+            this.lblReadStatusCodeData.Size = new System.Drawing.Size(79, 42);
+            this.lblReadStatusCodeData.TabIndex = 3;
+            this.lblReadStatusCodeData.Text = "XXXX";
+            this.lblReadStatusCodeData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPLCLiveUInt
+            // 
+            this.lblPLCLiveUInt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPLCLiveUInt.AutoSize = true;
+            this.lblPLCLiveUInt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPLCLiveUInt.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPLCLiveUInt.Location = new System.Drawing.Point(3, 0);
+            this.lblPLCLiveUInt.Name = "lblPLCLiveUInt";
+            this.lblPLCLiveUInt.Size = new System.Drawing.Size(245, 42);
+            this.lblPLCLiveUInt.TabIndex = 1;
+            this.lblPLCLiveUInt.Text = "Read Status Code:";
+            this.lblPLCLiveUInt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel9
             // 
@@ -98,13 +257,13 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel9.Controls.Add(this.lblPLCStatusCode, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.lblPLCStatusCodeData, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lblLiveUIntStatusCodeData, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 84);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(286, 42);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(336, 42);
             this.tableLayoutPanel9.TabIndex = 6;
             // 
             // lblPLCStatusCode
@@ -117,10 +276,23 @@ namespace PLCStationInterface.Forms
             this.lblPLCStatusCode.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPLCStatusCode.Location = new System.Drawing.Point(3, 0);
             this.lblPLCStatusCode.Name = "lblPLCStatusCode";
-            this.lblPLCStatusCode.Size = new System.Drawing.Size(195, 42);
+            this.lblPLCStatusCode.Size = new System.Drawing.Size(245, 42);
             this.lblPLCStatusCode.TabIndex = 1;
-            this.lblPLCStatusCode.Text = "PLC Status Code:";
+            this.lblPLCStatusCode.Text = "Live UInt Status Code:";
             this.lblPLCStatusCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblLiveUIntStatusCodeData
+            // 
+            this.lblLiveUIntStatusCodeData.AutoSize = true;
+            this.lblLiveUIntStatusCodeData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblLiveUIntStatusCodeData.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLiveUIntStatusCodeData.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblLiveUIntStatusCodeData.Location = new System.Drawing.Point(254, 0);
+            this.lblLiveUIntStatusCodeData.Name = "lblLiveUIntStatusCodeData";
+            this.lblLiveUIntStatusCodeData.Size = new System.Drawing.Size(79, 42);
+            this.lblLiveUIntStatusCodeData.TabIndex = 2;
+            this.lblLiveUIntStatusCodeData.Text = "XXXX";
+            this.lblLiveUIntStatusCodeData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -135,7 +307,7 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(286, 42);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(336, 42);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // PLCStatusDot
@@ -144,7 +316,7 @@ namespace PLCStationInterface.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PLCStatusDot.Client = null;
-            this.PLCStatusDot.Location = new System.Drawing.Point(204, 3);
+            this.PLCStatusDot.Location = new System.Drawing.Point(254, 3);
             this.PLCStatusDot.Name = "PLCStatusDot";
             this.PLCStatusDot.Size = new System.Drawing.Size(79, 36);
             this.PLCStatusDot.Status = VisualInspection.Utils.Net.ClientStatus.Disconnected;
@@ -160,7 +332,7 @@ namespace PLCStationInterface.Forms
             this.lblPLCStatus.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPLCStatus.Location = new System.Drawing.Point(3, 0);
             this.lblPLCStatus.Name = "lblPLCStatus";
-            this.lblPLCStatus.Size = new System.Drawing.Size(195, 42);
+            this.lblPLCStatus.Size = new System.Drawing.Size(245, 42);
             this.lblPLCStatus.TabIndex = 0;
             this.lblPLCStatus.Text = "PLC Status:";
             this.lblPLCStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,7 +349,7 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(286, 42);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(336, 42);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // TCPServerStatusDot
@@ -186,7 +358,7 @@ namespace PLCStationInterface.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TCPServerStatusDot.Client = null;
-            this.TCPServerStatusDot.Location = new System.Drawing.Point(204, 3);
+            this.TCPServerStatusDot.Location = new System.Drawing.Point(254, 3);
             this.TCPServerStatusDot.Name = "TCPServerStatusDot";
             this.TCPServerStatusDot.Size = new System.Drawing.Size(79, 36);
             this.TCPServerStatusDot.Status = VisualInspection.Utils.Net.ClientStatus.Disconnected;
@@ -202,7 +374,7 @@ namespace PLCStationInterface.Forms
             this.lblTCPServerStatus.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTCPServerStatus.Location = new System.Drawing.Point(3, 0);
             this.lblTCPServerStatus.Name = "lblTCPServerStatus";
-            this.lblTCPServerStatus.Size = new System.Drawing.Size(195, 42);
+            this.lblTCPServerStatus.Size = new System.Drawing.Size(245, 42);
             this.lblTCPServerStatus.TabIndex = 0;
             this.lblTCPServerStatus.Text = "TCP Server Status:";
             this.lblTCPServerStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -368,61 +540,171 @@ namespace PLCStationInterface.Forms
             this.label5.Text = "PLC Status Code:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanel10
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel5.Controls.Add(this.lblPLCLiveUIntData, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.lblPLCLiveUInt, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 126);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(286, 42);
-            this.tableLayoutPanel5.TabIndex = 7;
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel10.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel10.TabIndex = 0;
             // 
-            // lblPLCLiveUInt
+            // label4
             // 
-            this.lblPLCLiveUInt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 100);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "XXXX";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPLCLiveUInt.AutoSize = true;
-            this.lblPLCLiveUInt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPLCLiveUInt.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPLCLiveUInt.Location = new System.Drawing.Point(3, 0);
-            this.lblPLCLiveUInt.Name = "lblPLCLiveUInt";
-            this.lblPLCLiveUInt.Size = new System.Drawing.Size(195, 42);
-            this.lblPLCLiveUInt.TabIndex = 1;
-            this.lblPLCLiveUInt.Text = "PLC LiveUInt:";
-            this.lblPLCLiveUInt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 100);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "PLC LiveUInt:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblPLCStatusCodeData
+            // tableLayoutPanel11
             // 
-            this.lblPLCStatusCodeData.AutoSize = true;
-            this.lblPLCStatusCodeData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPLCStatusCodeData.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPLCStatusCodeData.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPLCStatusCodeData.Location = new System.Drawing.Point(204, 0);
-            this.lblPLCStatusCodeData.Name = "lblPLCStatusCodeData";
-            this.lblPLCStatusCodeData.Size = new System.Drawing.Size(79, 42);
-            this.lblPLCStatusCodeData.TabIndex = 2;
-            this.lblPLCStatusCodeData.Text = "XXXX";
-            this.lblPLCStatusCodeData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel11.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 1;
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel11.TabIndex = 0;
             // 
-            // lblPLCLiveUIntData
+            // label7
             // 
-            this.lblPLCLiveUIntData.AutoSize = true;
-            this.lblPLCLiveUIntData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblPLCLiveUIntData.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPLCLiveUIntData.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPLCLiveUIntData.Location = new System.Drawing.Point(204, 0);
-            this.lblPLCLiveUIntData.Name = "lblPLCLiveUIntData";
-            this.lblPLCLiveUIntData.Size = new System.Drawing.Size(79, 42);
-            this.lblPLCLiveUIntData.TabIndex = 3;
-            this.lblPLCLiveUIntData.Text = "XXXX";
-            this.lblPLCLiveUIntData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 100);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "XXXX";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 100);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "PLC LiveUInt:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel12.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel12.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(109, 100);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "XXXX";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(109, 100);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "PLC LiveUInt:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel14
+            // 
+            this.tableLayoutPanel14.ColumnCount = 2;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel14.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
+            this.tableLayoutPanel14.RowCount = 1;
+            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel14.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(109, 100);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "XXXX";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.SystemColors.Control;
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 100);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "PLC LiveUInt:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Diagnostics
             // 
@@ -436,6 +718,12 @@ namespace PLCStationInterface.Forms
             this.Text = "Diagnostics";
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -445,8 +733,14 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
+            this.tableLayoutPanel14.ResumeLayout(false);
+            this.tableLayoutPanel14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -477,7 +771,25 @@ namespace PLCStationInterface.Forms
         private System.Windows.Forms.Label lblPLCLiveUInt;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblPLCLiveUIntData;
+        private System.Windows.Forms.Label lblReadStatusCodeData;
+        private System.Windows.Forms.Label lblLiveUIntStatusCodeData;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label lblPLCStatusCodeData;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Label lblWriteStatusCodeData;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }

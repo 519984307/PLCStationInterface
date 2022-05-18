@@ -2,6 +2,8 @@
 using PLCStationInterface.Classes.PLC;
 using PLCStationInterface.Forms;
 using PLCStationInterface.Forms.MessageBoxes;
+using PLCStationInterface.Forms.SettingsLogin;
+using PLCStationInterface.UDT;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,11 +21,14 @@ namespace PLCStationInterface
         private readonly string SETTING_FILE_PATH = "settings.json";
         private readonly string ENCRIPTION_KEY = "W]rs6^%]";
 
+        private SettingsJDO settings { get; set; } = new SettingsJDO();
+
         private PLCSettings plcSettings;
         private StationTCPServerSettings stationTCPServerSettings;
         private Diagnostics diagnostics;
         private AboutApp aboutApp;
         private PLC plc;
+        private LoginBox loginBox;
 
         private bool mouseDown;
         private Point lastLocation;
@@ -69,12 +74,13 @@ namespace PLCStationInterface
             InitializeComponent();
 
             plc = new PLC();
-            plcSettings = new PLCSettings();
-            stationTCPServerSettings = new StationTCPServerSettings();
-            diagnostics = new Diagnostics();
+            loginBox = new LoginBox(settings.SettingsLogin);
+            plcSettings = new PLCSettings(settings);
+            stationTCPServerSettings = new StationTCPServerSettings(settings);
+            diagnostics = new Diagnostics(plc);
             aboutApp = new AboutApp();
 
-            //ReadSettingsJSON(SETTING_FILE_PATH, ENCRIPTION_KEY);
+            ReadSettingsJSON(SETTING_FILE_PATH, ENCRIPTION_KEY);
 
             Translator.LanguageChanged += Translate;
 
@@ -85,7 +91,7 @@ namespace PLCStationInterface
 
             Translator.Language = Language.ENG;
 
-            //loginBox.LogedChanged += Login_Changed;
+            loginBox.LogedChanged += Login_Changed;
 
             ActiveButton = btnAboutApp;
             ActivePage = aboutApp;
@@ -95,12 +101,6 @@ namespace PLCStationInterface
             pages.Add(btnDiagnostics, diagnostics);
             pages.Add(btnAboutApp, aboutApp);
 
-
-            //DataToServer.StationInformation.StationName = Settings.StationSettings.StationName;
-            //DataToServer.StationInformation.StationID = Settings.StationSettings.StationID;
-            //DataToServer.NonOperation = 0;
-            //DataToServer.UserInformation.Status = LoginResult.NoLogged;
-
             //mySQLDatabase.ExceptionChanged += MySqlExceptionChanged_ShowPopUp;
             //readerTCPClient.ExceptionChanged += TCPClientExceptionChanged_ShowPopUp;
             //serverTCPClient.ExceptionChanged += TCPClientExceptionChanged_ShowPopUp;
@@ -108,7 +108,7 @@ namespace PLCStationInterface
 
 
             // ODSTRANIT PRO DEAKTIVACI AUTOMATICKÉHO PŘIHLAŠOVÁNÍ
-            //loginBox.LogedIn = true;
+            loginBox.LogedIn = true;
 
             plc.IPAddress = "192.168.0.1";
             plc.UpdateInterval = 150;
@@ -169,12 +169,12 @@ namespace PLCStationInterface
         {
             if (File.Exists(Path))
             {
-                //EncriptionManager.DecryptFile(Path, CryptKey);
-                //Settings = SettingsJDO.Deserialize(File.ReadAllText(Path));
+                EncriptionManager.DecryptFile(Path, CryptKey);
+                settings = SettingsJDO.Deserialize(File.ReadAllText(Path));
             }
             else
             {
-                //File.WriteAllText(Path, Settings.Serialize());
+                File.WriteAllText(Path, settings.Serialize());
             }
 
             EncriptionManager.EncryptFile(Path, CryptKey);
@@ -182,21 +182,21 @@ namespace PLCStationInterface
 
         private void WriteSettingsJSON(string Path, string CryptKey)
         {
-            //EncriptionManager.DecryptFile(Path, CryptKey);
-            //File.WriteAllText(Path, Settings.Serialize());
-            //EncriptionManager.EncryptFile(Path, CryptKey);
+            EncriptionManager.DecryptFile(Path, CryptKey);
+            File.WriteAllText(Path, settings.Serialize());
+            EncriptionManager.EncryptFile(Path, CryptKey);
         }
 
         private void pbLoged_Click(object sender, EventArgs e)
         {
-            //if(loginBox.LogedIn == false)
-            //{
-            //    loginBox.ShowLoginDialog();
-            //}
-            //else
-            //{
-            //    loginBox.LogedIn = false;
-            //}
+            if (loginBox.LogedIn == false)
+            {
+                loginBox.ShowLoginDialog();
+            }
+            else
+            {
+                loginBox.LogedIn = false;
+            }
         }
 
         private void Login_Changed(object sender, bool e)

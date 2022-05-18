@@ -3,6 +3,7 @@ using PLCStationInterface.Classes.PLC;
 using PLCStationInterface.Forms;
 using PLCStationInterface.Forms.MessageBoxes;
 using PLCStationInterface.Forms.SettingsLogin;
+using PLCStationInterface.JDO;
 using PLCStationInterface.UDT;
 using System;
 using System.Collections.Generic;
@@ -77,7 +78,7 @@ namespace PLCStationInterface
 
             plc = new PLC();
             loginBox = new LoginBox(settings.SettingsLogin);
-            plcSettings = new PLCSettings(settings);
+            plcSettings = new PLCSettings(settings.PLCSettings);
             stationTCPServerSettings = new StationTCPServerSettings(settings);
             diagnostics = new Diagnostics(plc);
             aboutApp = new AboutApp();
@@ -101,31 +102,10 @@ namespace PLCStationInterface
             pages.Add(btnDiagnostics, diagnostics);
             pages.Add(btnAboutApp, aboutApp);
 
-            //mySQLDatabase.ExceptionChanged += MySqlExceptionChanged_ShowPopUp;
-            //readerTCPClient.ExceptionChanged += TCPClientExceptionChanged_ShowPopUp;
-            //serverTCPClient.ExceptionChanged += TCPClientExceptionChanged_ShowPopUp;
-            //interfacTCPIPClient.ExceptionChanged += TCPClientExceptionChanged_ShowPopUp;
-
-
             // ODSTRANIT PRO DEAKTIVACI AUTOMATICKÉHO PŘIHLAŠOVÁNÍ
             loginBox.LogedIn = true;
 
-            plc.IPAddress = "192.168.0.1";
-            plc.UpdateInterval = 150;
-            plc.Rack = 0;
-            plc.Slot = 1;
-            plc.WriteDBNumber = 10;
-            plc.ReadDBNumber = 10;
-            plc.ReadDataBufferSize = 2;
-            plc.WriteDataBufferOffset = 24;
-            plc.WriteDataBufferSize = 9;
-
-            plc.WriteDataBuffer = new byte[plc.WriteDataBufferSize];
-            plc.WriteDataBuffer[8] = 0;
-
-            plc.Connect();
-
-
+            SetPLCDataAndConnect(settings.PLCSettings, ref plc);
         }
 
         private void TCPClientExceptionChanged_ShowPopUp(object sender, Exception e)
@@ -265,6 +245,32 @@ namespace PLCStationInterface
         {
             ActiveButton = sender as Button;
             ActivePage = pages[ActiveButton];
+        }
+
+        private void SetPLCDataAndConnect(PLCSettingsJDO Settings, ref PLC PLC)
+        {
+            PLC.IPAddress = Settings.IPAddress;
+            PLC.UpdateInterval = Settings.UpdateInterval;
+            PLC.Rack = Settings.Rack;
+            PLC.Slot = Settings.Slot;
+            PLC.ReconnectInterval = 4000;
+            PLC.ReconnectEnabled = true;
+
+            PLC.LiveUIntDBNumber = Settings.LiveUIntDBNumber;
+            PLC.LiveUIntOffset = Settings.LiveUIntOffset;
+            PLC.LiveUIntBufferSize = Settings.LiveUIntBufferSize;
+
+            PLC.ReadDBNumber = Settings.ReadDBNumber;
+            PLC.ReadDataBufferOffset = Settings.ReadDataBufferOffset;
+            PLC.ReadDataBufferSize = Settings.ReadDataBufferSize;
+
+            PLC.WriteDBNumber = Settings.WriteDBNumber;
+            PLC.WriteDataBufferOffset = Settings.WriteDataBufferOffset;
+            PLC.WriteDataBufferSize = Settings.WriteDataBufferSize;
+
+#pragma warning disable CS4014
+            PLC.ConnectAsync();
+#pragma warning restore CS4014
         }
     }
 }

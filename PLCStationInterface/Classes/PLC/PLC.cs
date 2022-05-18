@@ -7,6 +7,8 @@ namespace PLCStationInterface.Classes.PLC
 {
     public class PLC : IHasClientStatus
     {
+        private object _lock = new object();
+
         public event EventHandler<ushort> LiveUIntChanged;
         public event EventHandler<ClientStatus> StatusChanged;
 
@@ -126,8 +128,8 @@ namespace PLCStationInterface.Classes.PLC
         public void Connect()
         {
             Status = ClientStatus.Connecting;
-            ReadStatusCode = client.ConnectTo(IPAddress, Rack, Slot);
-            Status = ReadStatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
+            LiveUIntStatusCode = client.ConnectTo(IPAddress, Rack, Slot);
+            Status = LiveUIntStatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
         }
 
         public async Task ConnectAsync() => await Task.Run(Connect);
@@ -152,32 +154,48 @@ namespace PLCStationInterface.Classes.PLC
             WriteDataToPLC();
         }
 
-        private void ReadDataFromPLC()
-        {
-            if (Status != ClientStatus.Connected) return;
-
-            byte[] buffer = new byte[ReadDataBufferSize];
-
-            ReadStatusCode = client.DBRead(ReadDBNumber, ReadDataBufferOffset, ReadDataBufferSize, buffer);
-            ReadDataBuffer = buffer;
-        }
-
         private void ReadLiveUIntFromPLC()
         {
-            byte[] buffer = new byte[LiveUIntBufferSize];
+            lock (_lock)
+            {
+                byte[] buffer = new byte[LiveUIntBufferSize];
 
-            ReadStatusCode = client.DBRead(LiveUIntDBNumber, LiveUIntOffset, LiveUIntBufferSize, buffer);
-            Status = ReadStatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
-            if (Status == ClientStatus.Disconnected) return;
+                LiveUIntStatusCode = client.DBRead(LiveUIntDBNumber, LiveUIntOffset, LiveUIntBufferSize, buffer);
+                Status = LiveUIntStatusCode == 0 ? ClientStatus.Connected : ClientStatus.Disconnected;
+                if (Status == ClientStatus.Disconnected) return;
 
-            LiveUInt = S7.GetUIntAt(buffer, 0);
+                LiveUInt = S7.GetUIntAt(buffer, 0);
+            }
+        }
+
+        private void ReadDataFromPLC()
+        {
+            lock (_lock)
+            {
+                //if (Status != ClientStatus.Connected) return;
+
+                byte[] buffer = new byte[ReadDataBufferSize];
+
+                ReadStatusCode = client.DBRead(ReadDBNumber, ReadDataBufferOffset, ReadDataBufferSize, buffer);
+                ReadDataBuffer = buffer;
+            }
         }
 
         private void WriteDataToPLC()
         {
-            if (Status != ClientStatus.Connected) return;
+            lock (_lock)
+            {
+                //if (Status != ClientStatus.Connected) return;
 
-            client.DBWrite(WriteDBNumber, WriteDataBufferOffset, WriteDataBufferSize, WriteDataBuffer);
+                byte[] buffer = new byte[WriteDataBufferSize];
+
+                WriteStatusCode = client.DBWrite(WriteDBNumber, WriteDataBufferOffset, WriteDataBufferSize, buffer);
+            }
+        }
+
+        public string GetErrorMessage(int ErrorCode)
+        {
+            return client.ErrorText(ErrorCode);
         }
     }
 }

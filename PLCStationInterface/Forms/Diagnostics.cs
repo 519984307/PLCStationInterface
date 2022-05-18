@@ -26,24 +26,37 @@ namespace PLCStationInterface.Forms
             Translator.LanguageChanged += Translate;
 
             PLCStatusDot.Client = PLC;
+
             PLC.LiveUIntStatusCodeChanged += LiveUIntStatusCode_Changed;
             PLC.ReadStatusCodeChanged += ReadStatusCode_Changed;
             PLC.WriteStatusCodeChanged += WriteStatusCode_Changed;
+            PLC.LiveUIntChanged += LiveUInt_Changed;
         }
 
         private void WriteStatusCode_Changed(object sender, int e)
         {
-            lblWriteStatusCodeData.Text = e.ToString();
+            lblWriteStatusCodeData.InvokeIfRequired((label) => label.Text = e.ToString());
+
+            tbWriteMassage.InvokeIfRequired(label => label.Text = PLC.GetErrorMessage(e));
         }
 
         private void ReadStatusCode_Changed(object sender, int e)
         {
-            lblReadStatusCodeData.Text = e.ToString();  
+            lblReadStatusCodeData.InvokeIfRequired((label) => label.Text = e.ToString());
+
+            tbReadMessage.InvokeIfRequired(label => label.Text = PLC.GetErrorMessage(e));
         }
 
         private void LiveUIntStatusCode_Changed(object sender, int e)
         {
-            lblLiveUIntStatusCodeData.Text = e.ToString();
+            lblLiveUIntStatusCodeData.InvokeIfRequired((label) => label.Text = e.ToString());
+
+            tbLiveUIntMessage.InvokeIfRequired(label => label.Text = PLC.GetErrorMessage(e));
+        }
+
+        private void LiveUInt_Changed(object sender, ushort e)
+        {
+            lblPLCStatusCodeData.InvokeIfRequired((label) => label.Text = e.ToString());
         }
 
         private void Translate(object sender, Language e)
@@ -59,7 +72,5 @@ namespace PLCStationInterface.Forms
                 lblPLCStatus.Text = "PLC Status:";
             }
         }
-
-
     }
 }

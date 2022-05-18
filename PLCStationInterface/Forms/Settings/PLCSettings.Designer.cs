@@ -46,7 +46,7 @@
             this.lblWriteDataSize = new System.Windows.Forms.Label();
             this.tbWriteDataSize = new System.Windows.Forms.TextBox();
             this.pReadWriteSettingsTitle = new System.Windows.Forms.Panel();
-            this.lblReadWriteTitle = new System.Windows.Forms.Label();
+            this.lblReadWriteSettingsTitle = new System.Windows.Forms.Label();
             this.pLiveUIntSettings = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tbLiveUIntDB = new System.Windows.Forms.TextBox();
@@ -74,7 +74,7 @@
             this.ipab = new VisualInspection.App.UserControls.IPAddressBox();
             this.lblIPAddress = new System.Windows.Forms.Label();
             this.pGeneralSettingsTitle = new System.Windows.Forms.Panel();
-            this.lblGeneralSettings = new System.Windows.Forms.Label();
+            this.lblGeneralSettingsTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -342,24 +342,24 @@
             // 
             // pReadWriteSettingsTitle
             // 
-            this.pReadWriteSettingsTitle.Controls.Add(this.lblReadWriteTitle);
+            this.pReadWriteSettingsTitle.Controls.Add(this.lblReadWriteSettingsTitle);
             this.pReadWriteSettingsTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pReadWriteSettingsTitle.Location = new System.Drawing.Point(0, 0);
             this.pReadWriteSettingsTitle.Name = "pReadWriteSettingsTitle";
             this.pReadWriteSettingsTitle.Size = new System.Drawing.Size(378, 33);
             this.pReadWriteSettingsTitle.TabIndex = 0;
             // 
-            // lblReadWriteTitle
+            // lblReadWriteSettingsTitle
             // 
-            this.lblReadWriteTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblReadWriteTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.lblReadWriteTitle.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblReadWriteTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblReadWriteTitle.Name = "lblReadWriteTitle";
-            this.lblReadWriteTitle.Size = new System.Drawing.Size(378, 33);
-            this.lblReadWriteTitle.TabIndex = 5;
-            this.lblReadWriteTitle.Text = "Read / Write Settings";
-            this.lblReadWriteTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReadWriteSettingsTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReadWriteSettingsTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.lblReadWriteSettingsTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblReadWriteSettingsTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblReadWriteSettingsTitle.Name = "lblReadWriteSettingsTitle";
+            this.lblReadWriteSettingsTitle.Size = new System.Drawing.Size(378, 33);
+            this.lblReadWriteSettingsTitle.TabIndex = 5;
+            this.lblReadWriteSettingsTitle.Text = "Read / Write Settings";
+            this.lblReadWriteSettingsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pLiveUIntSettings
             // 
@@ -727,24 +727,24 @@
             // 
             // pGeneralSettingsTitle
             // 
-            this.pGeneralSettingsTitle.Controls.Add(this.lblGeneralSettings);
+            this.pGeneralSettingsTitle.Controls.Add(this.lblGeneralSettingsTitle);
             this.pGeneralSettingsTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pGeneralSettingsTitle.Location = new System.Drawing.Point(0, 0);
             this.pGeneralSettingsTitle.Name = "pGeneralSettingsTitle";
             this.pGeneralSettingsTitle.Size = new System.Drawing.Size(378, 33);
             this.pGeneralSettingsTitle.TabIndex = 0;
             // 
-            // lblGeneralSettings
+            // lblGeneralSettingsTitle
             // 
-            this.lblGeneralSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblGeneralSettings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.lblGeneralSettings.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblGeneralSettings.Location = new System.Drawing.Point(0, 0);
-            this.lblGeneralSettings.Name = "lblGeneralSettings";
-            this.lblGeneralSettings.Size = new System.Drawing.Size(378, 33);
-            this.lblGeneralSettings.TabIndex = 5;
-            this.lblGeneralSettings.Text = "General Settings";
-            this.lblGeneralSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGeneralSettingsTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblGeneralSettingsTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.lblGeneralSettingsTitle.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblGeneralSettingsTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblGeneralSettingsTitle.Name = "lblGeneralSettingsTitle";
+            this.lblGeneralSettingsTitle.Size = new System.Drawing.Size(378, 33);
+            this.lblGeneralSettingsTitle.TabIndex = 5;
+            this.lblGeneralSettingsTitle.Text = "General Settings";
+            this.lblGeneralSettingsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -930,7 +930,7 @@
         private System.Windows.Forms.Label lblWriteDataSize;
         private System.Windows.Forms.TextBox tbWriteDataSize;
         private System.Windows.Forms.Panel pReadWriteSettingsTitle;
-        private System.Windows.Forms.Label lblReadWriteTitle;
+        private System.Windows.Forms.Label lblReadWriteSettingsTitle;
         private System.Windows.Forms.Panel pLiveUIntSettings;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox tbLiveUIntDB;
@@ -958,6 +958,6 @@
         private VisualInspection.App.UserControls.IPAddressBox ipab;
         private System.Windows.Forms.Label lblIPAddress;
         private System.Windows.Forms.Panel pGeneralSettingsTitle;
-        private System.Windows.Forms.Label lblGeneralSettings;
+        private System.Windows.Forms.Label lblGeneralSettingsTitle;
     }
 }

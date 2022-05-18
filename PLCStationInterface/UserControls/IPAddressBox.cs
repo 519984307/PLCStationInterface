@@ -8,7 +8,7 @@ namespace VisualInspection.App.UserControls
     public partial class IPAddressBox : UserControl
     {
         private int ipAddressBlinkCounter = 0;
-        private Color baseBackColor;
+        //private Color baseBackColor;
 
         private Timer timerIPAddressBlink = new Timer();
 
@@ -59,7 +59,7 @@ namespace VisualInspection.App.UserControls
 
         private void BlinkIPAddress(object sender, EventArgs e)
         {
-            TextBoxBackColor = TextBoxBackColor == baseBackColor ? BlinkBackColor : baseBackColor;
+            //TextBoxBackColor = TextBoxBackColor == baseBackColor ? BlinkBackColor : baseBackColor;
             if (++ipAddressBlinkCounter != 4) return;
             ipAddressBlinkCounter = 0;
             timerIPAddressBlink.Stop();

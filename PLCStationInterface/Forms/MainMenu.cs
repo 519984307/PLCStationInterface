@@ -73,14 +73,14 @@ namespace PLCStationInterface
         {
             InitializeComponent();
 
+            ReadSettingsJSON(SETTING_FILE_PATH, ENCRIPTION_KEY);
+
             plc = new PLC();
             loginBox = new LoginBox(settings.SettingsLogin);
             plcSettings = new PLCSettings(settings);
             stationTCPServerSettings = new StationTCPServerSettings(settings);
             diagnostics = new Diagnostics(plc);
             aboutApp = new AboutApp();
-
-            ReadSettingsJSON(SETTING_FILE_PATH, ENCRIPTION_KEY);
 
             Translator.LanguageChanged += Translate;
 

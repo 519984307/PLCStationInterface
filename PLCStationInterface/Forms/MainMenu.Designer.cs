@@ -38,6 +38,7 @@ namespace PLCStationInterface
             this.p0 = new System.Windows.Forms.Panel();
             this.p3 = new System.Windows.Forms.Panel();
             this.btnAboutApp = new System.Windows.Forms.Button();
+            this.tst = new System.Windows.Forms.Button();
             this.p2 = new System.Windows.Forms.Panel();
             this.pbLoged = new System.Windows.Forms.PictureBox();
             this.p1 = new System.Windows.Forms.Panel();
@@ -146,20 +147,21 @@ namespace PLCStationInterface
             this.p0.Dock = System.Windows.Forms.DockStyle.Left;
             this.p0.Location = new System.Drawing.Point(0, 37);
             this.p0.Name = "p0";
-            this.p0.Size = new System.Drawing.Size(297, 783);
+            this.p0.Size = new System.Drawing.Size(297, 817);
             this.p0.TabIndex = 6;
             // 
             // p3
             // 
             this.p3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.p3.Controls.Add(this.btnAboutApp);
+            this.p3.Controls.Add(this.tst);
             this.p3.Controls.Add(this.btnDiagnostics);
             this.p3.Controls.Add(this.btnStationTCPServerSettings);
             this.p3.Controls.Add(this.btnPLCSettings);
             this.p3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.p3.Location = new System.Drawing.Point(0, 233);
             this.p3.Name = "p3";
-            this.p3.Size = new System.Drawing.Size(295, 548);
+            this.p3.Size = new System.Drawing.Size(295, 582);
             this.p3.TabIndex = 8;
             // 
             // btnAboutApp
@@ -172,13 +174,31 @@ namespace PLCStationInterface
             this.btnAboutApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAboutApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAboutApp.ForeColor = System.Drawing.Color.White;
-            this.btnAboutApp.Location = new System.Drawing.Point(0, 183);
+            this.btnAboutApp.Location = new System.Drawing.Point(0, 244);
             this.btnAboutApp.Name = "btnAboutApp";
             this.btnAboutApp.Size = new System.Drawing.Size(295, 61);
             this.btnAboutApp.TabIndex = 11;
             this.btnAboutApp.Text = "About App";
             this.btnAboutApp.UseVisualStyleBackColor = false;
             this.btnAboutApp.Click += new System.EventHandler(this.pagesBtn_Click);
+            // 
+            // tst
+            // 
+            this.tst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tst.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tst.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tst.FlatAppearance.BorderSize = 0;
+            this.tst.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.tst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tst.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tst.ForeColor = System.Drawing.Color.White;
+            this.tst.Location = new System.Drawing.Point(0, 183);
+            this.tst.Name = "tst";
+            this.tst.Size = new System.Drawing.Size(295, 61);
+            this.tst.TabIndex = 12;
+            this.tst.Text = "Station Interface Data Status";
+            this.tst.UseVisualStyleBackColor = false;
+            this.tst.Click += new System.EventHandler(this.pagesBtn_Click);
             // 
             // p2
             // 
@@ -220,7 +240,7 @@ namespace PLCStationInterface
             this.pagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pagePanel.Location = new System.Drawing.Point(297, 37);
             this.pagePanel.Name = "pagePanel";
-            this.pagePanel.Size = new System.Drawing.Size(439, 783);
+            this.pagePanel.Size = new System.Drawing.Size(439, 817);
             this.pagePanel.TabIndex = 7;
             // 
             // pMain
@@ -307,7 +327,7 @@ namespace PLCStationInterface
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(736, 820);
+            this.ClientSize = new System.Drawing.Size(736, 854);
             this.Controls.Add(this.pagePanel);
             this.Controls.Add(this.p0);
             this.Controls.Add(this.pMain);
@@ -353,6 +373,7 @@ namespace PLCStationInterface
         private System.Windows.Forms.PictureBox pbIcon;
         private System.Windows.Forms.PictureBox pbLoged;
         private System.Windows.Forms.Button btnAboutApp;
+        private System.Windows.Forms.Button tst;
     }
 }
 

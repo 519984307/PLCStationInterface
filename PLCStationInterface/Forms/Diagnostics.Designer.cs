@@ -81,6 +81,7 @@ namespace PLCStationInterface.Forms
             this.tbLiveUIntMessage = new System.Windows.Forms.TextBox();
             this.tbReadMessage = new System.Windows.Forms.TextBox();
             this.tbWriteMassage = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -435,7 +436,7 @@ namespace PLCStationInterface.Forms
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(50, 23);
+            this.panel1.Location = new System.Drawing.Point(50, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 258);
             this.panel1.TabIndex = 6;
@@ -706,15 +707,17 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 342F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel16, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel16, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 1, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 307F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 159F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 639);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(436, 799);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // tableLayoutPanel16
@@ -723,28 +726,28 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel16.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.lblLiveUIntMessage, 0, 2);
-            this.tableLayoutPanel16.Controls.Add(this.lblReadMessage, 0, 5);
-            this.tableLayoutPanel16.Controls.Add(this.lblWriteMessage, 0, 8);
+            this.tableLayoutPanel16.Controls.Add(this.lblReadMessage, 0, 4);
+            this.tableLayoutPanel16.Controls.Add(this.lblWriteMessage, 0, 6);
             this.tableLayoutPanel16.Controls.Add(this.tbLiveUIntMessage, 0, 3);
-            this.tableLayoutPanel16.Controls.Add(this.tbReadMessage, 0, 6);
-            this.tableLayoutPanel16.Controls.Add(this.tbWriteMassage, 0, 9);
+            this.tableLayoutPanel16.Controls.Add(this.tbReadMessage, 0, 5);
+            this.tableLayoutPanel16.Controls.Add(this.tbWriteMassage, 0, 7);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(50, 330);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(50, 363);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
-            this.tableLayoutPanel16.RowCount = 12;
+            this.tableLayoutPanel16.RowCount = 10;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(336, 298);
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(336, 277);
             this.tableLayoutPanel16.TabIndex = 3;
             // 
             // label11
@@ -785,7 +788,7 @@ namespace PLCStationInterface.Forms
             this.lblReadMessage.AutoSize = true;
             this.lblReadMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblReadMessage.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblReadMessage.Location = new System.Drawing.Point(3, 129);
+            this.lblReadMessage.Location = new System.Drawing.Point(3, 114);
             this.lblReadMessage.Name = "lblReadMessage";
             this.lblReadMessage.Size = new System.Drawing.Size(330, 33);
             this.lblReadMessage.TabIndex = 3;
@@ -800,7 +803,7 @@ namespace PLCStationInterface.Forms
             this.lblWriteMessage.AutoSize = true;
             this.lblWriteMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblWriteMessage.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblWriteMessage.Location = new System.Drawing.Point(3, 210);
+            this.lblWriteMessage.Location = new System.Drawing.Point(3, 180);
             this.lblWriteMessage.Name = "lblWriteMessage";
             this.lblWriteMessage.Size = new System.Drawing.Size(330, 33);
             this.lblWriteMessage.TabIndex = 4;
@@ -822,7 +825,7 @@ namespace PLCStationInterface.Forms
             // 
             this.tbReadMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbReadMessage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbReadMessage.Location = new System.Drawing.Point(3, 165);
+            this.tbReadMessage.Location = new System.Drawing.Point(3, 150);
             this.tbReadMessage.Name = "tbReadMessage";
             this.tbReadMessage.ReadOnly = true;
             this.tbReadMessage.Size = new System.Drawing.Size(330, 27);
@@ -833,12 +836,27 @@ namespace PLCStationInterface.Forms
             // 
             this.tbWriteMassage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbWriteMassage.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbWriteMassage.Location = new System.Drawing.Point(3, 246);
+            this.tbWriteMassage.Location = new System.Drawing.Point(3, 216);
             this.tbWriteMassage.Name = "tbWriteMassage";
             this.tbWriteMassage.ReadOnly = true;
             this.tbWriteMassage.Size = new System.Drawing.Size(330, 27);
             this.tbWriteMassage.TabIndex = 7;
             this.tbWriteMassage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(50, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(336, 33);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Diagnostic Status";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Diagnostics
             // 
@@ -875,6 +893,7 @@ namespace PLCStationInterface.Forms
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel16.PerformLayout();
             this.ResumeLayout(false);
@@ -934,5 +953,6 @@ namespace PLCStationInterface.Forms
         private System.Windows.Forms.TextBox tbLiveUIntMessage;
         private System.Windows.Forms.TextBox tbReadMessage;
         private System.Windows.Forms.TextBox tbWriteMassage;
+        private System.Windows.Forms.Label label12;
     }
 }

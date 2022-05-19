@@ -26,6 +26,7 @@ namespace PLCStationInterface
 
         private PLCSettings plcSettings;
         private StationTCPServerSettings stationTCPServerSettings;
+        private InterfaceData interfaceData;
         private Diagnostics diagnostics;
         private AboutApp aboutApp;
         private PLC plc;
@@ -78,8 +79,9 @@ namespace PLCStationInterface
 
             plc = new PLC();
             loginBox = new LoginBox(settings.SettingsLogin);
-            plcSettings = new PLCSettings(settings.PLCSettings);
+            plcSettings = new PLCSettings(settings.PLCSettings, loginBox, plc);
             stationTCPServerSettings = new StationTCPServerSettings(settings);
+            interfaceData = new InterfaceData();
             diagnostics = new Diagnostics(plc);
             aboutApp = new AboutApp();
 
@@ -88,6 +90,7 @@ namespace PLCStationInterface
             AddPage(plcSettings);
             AddPage(stationTCPServerSettings);
             AddPage(diagnostics);
+            AddPage(interfaceData);
             AddPage(aboutApp);
 
             Translator.Language = Language.ENG;
@@ -100,6 +103,7 @@ namespace PLCStationInterface
             pages.Add(btnPLCSettings, plcSettings);
             pages.Add(btnStationTCPServerSettings, stationTCPServerSettings);
             pages.Add(btnDiagnostics, diagnostics);
+            pages.Add(tst, interfaceData);
             pages.Add(btnAboutApp, aboutApp);
 
             // ODSTRANIT PRO DEAKTIVACI AUTOMATICKÉHO PŘIHLAŠOVÁNÍ
@@ -128,18 +132,18 @@ namespace PLCStationInterface
             if (Translator.Language == Language.CZ)
             {
                 Text = "PLC <--> Station Interface";
-                lblTitle.Text = "NMP Station Tire Inspection";
-                btnPLCSettings.Text = "Přihlášení do VII";
-                btnStationTCPServerSettings.Text = "Změna Hesla";
+                lblTitle.Text = "PLC <--> Station Interface";
+                btnPLCSettings.Text = "Nastavení PLC";
+                btnStationTCPServerSettings.Text = "Nastavení TCP Serveru";
                 btnDiagnostics.Text = "Diagnostika";
                 btnAboutApp.Text = "O Aplikaci";
             }
             else if (Translator.Language == Language.ENG)
             {
                 Text = "PLC <--> Station Interface";
-                lblTitle.Text = "NMP Station Tire Inspection";
-                btnPLCSettings.Text = "Login to VII";
-                btnStationTCPServerSettings.Text = "Change Password";
+                lblTitle.Text = "PLC <--> Station Interface";
+                btnPLCSettings.Text = "PLC Settings";
+                btnStationTCPServerSettings.Text = "TCP Server Settings";
                 btnDiagnostics.Text = "Diagnostics";
                 btnAboutApp.Text = "About App";
             }
